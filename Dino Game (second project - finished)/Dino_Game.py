@@ -173,16 +173,16 @@ while True:
     if colisoes and not colidiu: # se morreu
         death.play()
         colidiu = True
-    if colidiu: # se morreu fica aparecendo as mensagem até apertar R lá nos evento
+    if colidiu: # se morreu fica aparecendo as mensagens até apertar R nos eventos
         texto_retorno1 = exibe_mensagem('GAME OVER', 60, (0, 0, 0))
         texto_retorno2 = exibe_mensagem('Pressione r para reiniciar', 25, (0, 0, 0))
         tela.blit(texto_retorno1, [230, 200])
         tela.blit(texto_retorno2, [260, 265])
-    if not colidiu: # se o player tá vivo vai continuar o game normal atualizando e pontuando
+    if not colidiu: # se o player está vivo vai continuar o game normal atualizando e pontuando
         todas_as_sprites.update()
         texto_retorno = exibe_mensagem(pontos, 40, (0,0,0))
         pontos += 1
-    if pontos % 100 == 0 and not colidiu: # se o player tá vivo e pontuação múltiplo de 100
+    if pontos % 100 == 0 and not colidiu: # se o player está vivo e pontuação múltiplo de 100
         score.play()
         if velocidade <= 30:
             velocidade += 1
