@@ -6,7 +6,7 @@ class Player(pg.sprite.Sprite):
     def __init__(self, app):
         pg.sprite.Sprite.__init__(self)
         self.app = app
-        # isso aqui é pra colocar as 12 animações do pacman, 3 pra cada lado
+        # pra colocar as 12 animações do pacman, 3 pra cada lado
         self.player_list = list()
         self.cheio = self.app.SpriteSheet.subsurface((487, 0), (16, 16))
         x, y = 455, 0
