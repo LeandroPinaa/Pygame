@@ -17,7 +17,7 @@ class Pathfinder:
         # roomba
         self.roomba = pg.sprite.GroupSingle(Roomba(self.empty_path))  # como só vou botar uma sprite no grupo uso single
 
-    def empty_path(self):  # when roomba reached end, we empty the self.path (not very necessary, but it's fine)
+    def empty_path(self):  # when roomba reached end, we empty the self.path
         self.path = []
 
     def draw_active_cell(self):
@@ -41,8 +41,7 @@ class Pathfinder:
         # path
         finder = AStarFinder(diagonal_movement=DiagonalMovement.always)
         self.path, _ = finder.find_path(start, end, self.grid)
-        self.grid.cleanup()  # precisa limpar o grid pq, a variável start, quando roda o finder.find_path, se torna
-        # igual ao end, ficando start=end. Como nesse projeto a cada click a gente quer diferente, pode limpar
+        self.grid.cleanup()  # precisa limpar o grid pq, a variável start, quando roda o finder.find_path, se torna igual ao end, ficando start=end
         self.roomba.sprite.set_path(self.path)
 
     def draw_path(self):
